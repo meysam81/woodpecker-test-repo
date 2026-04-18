@@ -28,7 +28,3 @@ steps:
       context: applications/odoo
       platforms: linux/amd64
       tags_file: .tags
-      username:
-        from_secret: zot_username
-      password:
-        from_secret: zot_password
