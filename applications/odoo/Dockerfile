@@ -5,7 +5,7 @@ USER root
 RUN apt update && apt upgrade -y
 
 COPY requirements.txt /tmp/requirements.txt
-RUN pip install -U pip --break-system-packages --no-cache-dir -r /tmp/requirements.txt
+RUN pip install --break-system-packages --no-cache-dir -r /tmp/requirements.txt
 
 COPY enterprise /opt/odoo/enterprise
 
