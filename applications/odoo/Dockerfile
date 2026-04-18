@@ -2,9 +2,10 @@ ARG ODOO_VERSION=19.0
 FROM odoo:${ODOO_VERSION}
 
 USER root
+RUN apt update && apt upgrade -y
 
 COPY requirements.txt /tmp/requirements.txt
-RUN pip install --no-cache-dir -r /tmp/requirements.txt
+RUN pip install -U pip --break-system-packages --no-cache-dir -r /tmp/requirements.txt
 
 COPY enterprise /opt/odoo/enterprise
 
